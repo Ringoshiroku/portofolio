@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  color-scheme: dark;
+  --bg:#0b0f0e; --panel:#121816; --line:#1a2320; --text:#e6efe9; --sub:#a9c3b8;
+  --sage200:#aecfbf; --sage300:#88b8a1; --sage400:#72a193;
+}
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", sans-serif; }
+
+/* Reveal-on-scroll baseline */
+.reveal-child > * { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.reveal-child > *.in { opacity: 1; transform: none; }
+.reveal-child > *:nth-child(2){ transition-delay: .06s }
+.reveal-child > *:nth-child(3){ transition-delay: .12s }
+.reveal-child > *:nth-child(4){ transition-delay: .18s }
+
+/* Card + button glow */
+.card-glow, .btn-glow { transition: box-shadow .35s ease, transform .25s ease; }
+.card-glow:hover, .btn-glow:hover { box-shadow: 0 20px 60px rgba(136,184,161,.14), 0 0 0 1px rgba(136,184,161,.35) inset; }
+.card-glow:hover { transform: translateY(-2px); }
+
+/* Shine sweep (metallic) */
+.btn { position: relative; overflow: hidden; display:inline-flex; align-items:center; justify-content:center; border-radius:.5rem; padding:.625rem 1.25rem; font-weight:600; }
+.btn::after {
+  content: ""; position: absolute; inset: -2px; transform: translateX(-130%) skewX(-18deg);
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.06) 35%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.06) 65%, transparent 100%);
+  transition: transform .7s ease; pointer-events: none;
+}
+.btn:hover::after { transform: translateX(130%) skewX(-18deg); }
+
+.btn-primary { background: var(--sage300); color: #0c0f0e; }
+.btn-primary:hover { filter: brightness(.97); }
+.btn-ghost { border:1px solid var(--line); color: var(--sub); background: rgba(0,0,0,.25); }
+.btn-ghost:hover { color: #0c0f0e; background: var(--sage300); }
+
+.link-underline { background-image: linear-gradient(90deg, var(--sage300), var(--sage200)); background-size: 0% 2px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
+.link-underline:hover { background-size: 100% 2px; }
+
+/* Horizontal rail scrollbar */
+.rail { scrollbar-color: var(--sage300) transparent; scrollbar-width: thin; scrollbar-gutter: stable both-edges; overscroll-behavior-x: contain; }
+.rail::-webkit-scrollbar { height: 10px; }
+.rail::-webkit-scrollbar-thumb { background: linear-gradient(90deg, var(--sage300), var(--sage200)); border-radius: 999px; }
+
+/* Hide scrollbars for the infinite rail variant */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-child > * { transition: none !important; transform: none !important; opacity: 1 !important; }
+  .card-glow { transition: none !important; transform: none !important; }
+}
