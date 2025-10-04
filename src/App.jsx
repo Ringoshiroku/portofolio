@@ -16,7 +16,7 @@ const TOKENS = {
   sage400: "#72a193",
 };
 
-const SIGNATURE_URL = "/ringoshiro.png";
+const SIGNATURE_URL = import.meta.env.BASE_URL + "/ringoshiro.png";
 
 const NAV = [
   { id: "work", title: "Work" },
