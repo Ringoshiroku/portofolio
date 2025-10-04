@@ -101,7 +101,7 @@ export default function App(){
               className="group flex items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sage300)]"
             >
               <LogoMark />
-              <strong className="tracking-wide transition-colors group-hover:text-[var(--sage200)]">
+              <strong className="tracking-wide transition-colors group-hover:text-[#c3d6cd]">
                 ringoshiro
               </strong>
             </a>
@@ -124,10 +124,10 @@ export default function App(){
         </div>
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
           <div className="reveal-child" ref={revealRef}>
-            <p className="uppercase tracking-[0.2em] text-xs text-[var(--sage200)]/90">
+            <p className="uppercase tracking-[0.2em] text-xs text-[var(--sage200)]">
               일어나라
             </p>
-            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
+            <h1 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-[#c3d6cd]">
               Vito Tantra Putra
             </h1>
             <h1 className="mt-3 text-xl md:text-2xl font-semibold tracking-tight leading-tight">
@@ -210,7 +210,7 @@ export default function App(){
               </div>
               <div className="mt-4">
                 <p className="text-xs prose-muted">Recent focus</p>
-                <h3 className="text-lg font-semibold">PETIR Training → Faster CTF Solves</h3>
+                <h3 className="text-lg font-semibold text-[#c3d6cd]">PETIR Training → Faster CTF Solves</h3>
                 <p className="prose-muted text-sm">
                   Clear practice plans, discussions, writeups, upsolving problems, and learning relevant CTF topics.
                 </p>
@@ -222,7 +222,9 @@ export default function App(){
 
       {/* WORK RAIL */}
       <section id="work" className="mx-auto max-w-6xl px-4 py-14">
-        <SectionTitle title="Works" subtitle="Experiences and Notes" />
+        <div style={{ color: '#c3d6cd' }}>
+          <SectionTitle title="Works" subtitle="Experiences and Notes" />
+        </div>
         <div className="mt-6 relative">
           {(
             <div className="rail grid grid-flow-col auto-cols-[minmax(280px,1fr)] gap-4 overflow-x-auto pb-4 px-6">
@@ -238,7 +240,9 @@ export default function App(){
 
       {/* ABOUT */}
       <section id="about" className="mx-auto max-w-6xl px-4 py-14">
-        <SectionTitle title="About" subtitle="Principles & ways of working" />
+        <div style={{ color: '#c3d6cd' }}>
+          <SectionTitle title="About" subtitle="Principles & ways of working" />
+        </div>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           <Principle
             title="Learn by doing"
@@ -258,7 +262,9 @@ export default function App(){
       {/* STACK */}
       <section id="stack" className="border-y border-[var(--line)]/60 bg-[var(--panel)]/40">
         <div className="mx-auto max-w-6xl px-4 py-14">
-          <SectionTitle title="Stack" subtitle="Tools I use repeatedly" />
+          <div style={{ color: '#c3d6cd' }}>
+            <SectionTitle title="Stack" subtitle="Tools I use repeatedly" />
+          </div>
           <div className="mt-6 grid md:grid-cols-4 gap-4">
             {['Python','Linux','Burp Suite','Wireshark','GitHub Actions','Docker','Git','Ghidra','Ida'].map(x=> (
               <div key={x} className="card rounded-xl px-4 py-3 text-sm text-[var(--sage200)]">
@@ -273,7 +279,7 @@ export default function App(){
       <section id="contact" className="mx-auto max-w-6xl px-4 py-16">
         <TiltCard className="card rounded-2xl p-8 grid md:grid-cols-[1fr_auto] gap-6 items-center card-glow" intensity={4}>
           <div>
-            <h3 className="text-2xl font-bold">Let’s collaborate</h3>
+            <h3 className="text-2xl font-bold text-[#c3d6cd]">Let’s collaborate</h3>
             <p className="prose-muted">Share your ideas and goals — I’ll help translate them into clear strategies and actionable plans.</p>
           </div>
           <div className="flex gap-3">
@@ -401,16 +407,12 @@ function CaseCard({ id, title, summary, tags, link, image, imageAlt }){
                         transition-opacity duration-300
                         group-hover:from-[var(--bg)]/85 group-hover:via-[#0e1412]/40" />
 
-        {/* Optional soft sage vignette */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(60% 70% at 70% 30%, rgba(136,184,161,.12), transparent 60%)" }}
-        />
+        
       </div>
 
       {/* CONTENT */}
       <div className="p-5">
-        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[var(--text)]">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#c3d6cd]">{title}</h3>
         <p className="prose-muted text-sm mt-1">{summary}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {tags.map(t => (
