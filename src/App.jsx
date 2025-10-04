@@ -25,8 +25,8 @@ const NAV = [
   { id: "contact", title: "Contact" },
 ];
 
-const RECENT_FOCUS_IMG = "/work/recent-focus.jpg";
-const RECENT_FOCUS_ALT = "PETIR after a training session";
+const RECENT_FOCUS_IMG = import.meta.env.BASE_URL + "/work/recent-focus.jpg";
+const RECENT_FOCUS_ALT = import.meta.env.BASE_URL + "PETIR after a training session";
 
 const CASES = [
   {
@@ -35,7 +35,7 @@ const CASES = [
     summary: "Organized meetups & training; strengthened CTF practice culture at BINUS.",
     tags: ["Leadership", "CTF", "Community"],
     link: "https://www.linkedin.com/in/vito-tantra-putra",
-    image: "/work/petir.jpg",
+    image: import.meta.env.BASE_URL + "/work/petir.jpg",
     imageAlt: "PETIR Cyber Security meetup"
   },
   {
@@ -44,7 +44,7 @@ const CASES = [
     summary: "In-depth CTF write-ups spanning cryptography, forensics, reverse engineering, OSINT, and other attack methodologies.",
     tags: ["Cryptography", "OSINT", "Forensics", "Reverse Engineering", "Miscellaneous"],
     link: "https://ringoshiro.gitbook.io/ctf-write-ups",
-    image: "/work/ctf.png",
+    image: import.meta.env.BASE_URL + "/work/ctf.png",
     imageAlt: "Terminal and code during a CTF"
   },
 ];
