@@ -224,12 +224,7 @@ export default function App(){
       <section id="work" className="mx-auto max-w-6xl px-4 py-14">
         <SectionTitle title="Works" subtitle="Experiences and Notes" />
         <div className="mt-6 relative">
-          {USE_INFINITE_RAIL ? (
-            <InfiniteRail
-              items={CASES}
-              renderItem={(c) => <CaseCard {...c} />}
-            />
-          ) : (
+          {(
             <div className="rail grid grid-flow-col auto-cols-[minmax(280px,1fr)] gap-4 overflow-x-auto pb-4 px-6">
               {CASES.map(c => (
                 <div key={c.id} className="min-w-[280px]">
